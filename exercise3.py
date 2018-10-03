@@ -8,8 +8,8 @@ def F(x): #наша функция
 
 x = numpy.arange(1, 30, .1) #точки графика
 mini = minimize(F, 2, method='BFGS') #подсчитываем по методу BFGS для 2
-print(round(F(float(mini.x)), 2)) #первый ответ
+print(round(float(mini.fun, 2)) #первый ответ
 mini = minimize(F, 30, method='BFGS')
-print(round(F(float(mini.x)), 2)) #второй ответ
+print(round(float(mini.fun, 2)) #второй ответ
 
 plt.plot(x, list(map(F, x)))#рисуем график
