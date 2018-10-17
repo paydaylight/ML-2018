@@ -76,17 +76,14 @@ class KNNHash(object):
         for j in range(self.L):
             inds = []
             distArr = [] #array of distance
-            clss = [] #array of classes
+            
             for i in range(self.m):
                 inds.append(self.t_hh[j][1][i](x=u))         
             cntr = Counter([outp for inpt,outp in self.t_hh[j][0][sum(inds)]])
             print(cntr)
             for q in self.t_hh[j][0][sum(inds)]:
                 distArr.append(euclidDist(u, q)) #appending distArr with distances
-                clss.append(q[1]) #appending array of classes
-            minInd = distArr.index(min(distArr)) #taking class of minimal distance
             print("min distance: " +  str(min(distArr)))
-            print("class: " + str(clss[minInd]))
         print("\n")
             
             #Here you must put your code, extend the method with distance function and calculation with unknown sample "u"
